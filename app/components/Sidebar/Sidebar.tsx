@@ -191,8 +191,8 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
       transition: all 0.5s ease;
       border-radius: 100%;
 
-      width: auto;
-      height: auto;
+      width: 70px;
+      height: 70px;
 
       img {
         border-radius: 100%;
