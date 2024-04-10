@@ -1,0 +1,22 @@
+datasource db {
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Task {
+    id          String  @id @default(auto()) @map("_id") @db.ObjectId
+    title       String
+    description String?
+    date        String
+    isCompleted Boolean @default(false)
+    isImportant Boolean @default(false)
+
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
+
+    userId String
+}
